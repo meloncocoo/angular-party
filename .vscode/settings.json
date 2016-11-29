@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "typescript.tsdk": "node_module/typescript/lib",
+
+    // ts project: hide *.js and *.js.map files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        // "node_modules": true,
+        "**/*.js": { "when": "$(basename).ts" },
+        "**/*.js.map": true
+    }
+}
