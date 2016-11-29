@@ -7,7 +7,7 @@ import { ActivityUsersComponent }   from './activity-users.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    { path: 'activity',               component: ActivityComponent },
+    { path: 'activities',             component: ActivityComponent },
     { path: 'activity/detail/:id',    component: ActivityDetailComponent },
     { path: 'activity/users/:id',     component: ActivityUsersComponent }
   ])],
