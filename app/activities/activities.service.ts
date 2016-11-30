@@ -6,7 +6,7 @@ export class Activity {
     public name: string,
     public desc: string,
     public count: number,
-    public date: date,
+    public date: string,
     public status: string
   ) { }
 }
@@ -19,7 +19,7 @@ const ACTIVITIES: Activity[] = [
 const FETCH_LATENCY = 500;
 
 @Injectable()
-export class ActivityService {
+export class ActivitiesService {
   getActivities() {
     return new Promise<Activity[]>(resolve => {
       setTimeout(() => { resolve(ACTIVITIES); }, FETCH_LATENCY);

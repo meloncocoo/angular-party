@@ -11,7 +11,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { CoreModule }         from './core/core.module';
 import { ContactModule }      from './contact/contact.module';
 import { HeroModule }         from './hero/hero.module';
-import { ActivityModule }     from './activity/activity.module';
+import { ActivitiesModule }   from './activities/activities.module';
 
 import './rxjs-extensions';
 
@@ -21,7 +21,7 @@ import './rxjs-extensions';
     CoreModule, // .forRoot({userName: 'Miss Marple'}),
     HeroModule,
     ContactModule,
-    ActivityModule,
+    ActivitiesModule,
     AppRoutingModule
   ],
   declarations: [ AppComponent ],

@@ -4,7 +4,7 @@ import { Location }                     from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
 
-import { ActivityService, Activity }    from './activity.service';
+import { ActivitiesService, Activity }  from '../activities.service';
 
 @Component({
   moduleId: module.id,
@@ -12,18 +12,23 @@ import { ActivityService, Activity }    from './activity.service';
   templateUrl: 'activity-detail.component.html'
 })
 export class ActivityDetailComponent implements OnInit {
+  msg = '数据加载中 ...';
+
   @Input() activity: Activity;
 
   constructor(
-    private activityService: ActivityService,
+    private activitiesService: ActivitiesService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.activityService.getActivity(+params['id']))
-      .subscribe(activity => this.activity = activity);
+      .switchMap((params: Params) => this.activitiesService.getActivity(+params['id']))
+      .subscribe(activity => {
+        this.msg = '';
+        this.activity = activity;
+      });
   }
 
   goBack(): void {

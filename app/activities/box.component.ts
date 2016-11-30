@@ -1,7 +1,7 @@
 import { Component, OnInit, Input }       from '@angular/core';
 import { Router }                         from '@angular/router';
 
-import { Activity }                       from './activity.service';
+import { Activity }                       from './activities.service';
 
 @Component({
   moduleId: module.id,

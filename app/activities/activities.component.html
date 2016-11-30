@@ -1,4 +1,5 @@
 <h1 class="page-header">已创建的活动</h1>
+<div *ngIf="msg" class="alert alert-success" role="alert">{{msg}}</div>
 <div class="row activity">
   <activity-box *ngFor="let item of activities" [activity]="item" class="col-sm-6 col-md-3 col-lg-2"></activity-box>
 </div>
