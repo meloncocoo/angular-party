@@ -8,15 +8,16 @@ import { Activity, ActivitiesService }    from './activities.service';
 })
 export class ActivitiesComponent implements OnInit {
   msg = '数据加载中 ...';
-  activities: Activity[] = [];
+  public activities: Activity[];
 
   constructor(private activitiesService: ActivitiesService) { }
 
   ngOnInit() {
     this.activitiesService.getActivities()
-    .then(activities => {
-      this.msg = '';
-      this.activities = activities;
-    });
+      .then(activities => {
+        this.msg = '';
+        this.activities = activities;
+        console.log(this.activities);
+      });
   }
 }

@@ -5,8 +5,8 @@ import { FormsModule }        from '@angular/forms';
 import { HttpModule }         from '@angular/http';
 
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from '../in-memory-data.service';
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from '../in-memory-data.service';
 
 import { TitleComponent }       from './title.component';
 import { Logger }               from './logger.service';
@@ -17,8 +17,8 @@ import { UserService }          from './user.service';
     CommonModule,
     RouterModule,
     FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpModule/*,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)*/
   ],
   declarations: [ TitleComponent ],
   exports:      [ TitleComponent ],

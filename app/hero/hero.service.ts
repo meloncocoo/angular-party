@@ -8,8 +8,11 @@ const FETCH_LATENCY = 500;
 
 @Injectable()
 export class HeroService {
-  private heroesUrl = 'app/heroes';  // URL to web api
-  private headers   = new Headers({'Content-Type': 'application/json'});
+  private heroesUrl = 'http://localhost:8080/api/activity';  // URL to web api
+  private headers   = new Headers({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'http://localhost:3000/'
+  });
 
   constructor(private http: Http) { }
 
