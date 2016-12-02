@@ -23,7 +23,9 @@ export class Alert {
   moduleId: module.id,
   selector: 'app-alert',
   template: `
-    <div *ngIf="alert && alert.content" [ngClass]="setClasses()">{{alert.content}}
+    <div *ngIf="alert && alert.content" [ngClass]="setClasses()">
+      <i *ngIf="alert && alert.type === 'loading'" class="fa fa-spinner fa-pulse fa-fw"></i>
+      {{alert.content}}
       <button *ngIf="alert.dismissible" type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
       </button>

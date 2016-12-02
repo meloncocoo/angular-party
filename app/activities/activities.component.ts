@@ -8,7 +8,7 @@ import { Alert }                          from '../shared/alert.component';
   templateUrl: 'activities.component.html'
 })
 export class ActivitiesComponent implements OnInit {
-  alert = new Alert('info', '数据加载中 ...');
+  alert = new Alert('loading', '数据加载中 ...');
   public activities: Activity[] = [];
 
   constructor(private activitiesService: ActivitiesService) { }

@@ -1,7 +1,6 @@
-<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
 <div *ngIf="activity" class="panel panel-default">
-  <div class="panel-heading">{{activity.name}}</div>
+  <div class="panel-heading">新活动</div>
   <div class="panel-body">
-    <activity-form [activity]="activity"></activity-form>
+    <activity-form [activity]="activity" (backEvent)="goBack($event)" (saveEvent)="toSave($event)"></activity-form>
   </div>
 </div>

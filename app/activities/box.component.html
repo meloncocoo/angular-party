@@ -1,7 +1,7 @@
 <div *ngIf="activity" class="thumbnail">
   <div class="title row">
     <div class="col-md-6 text-left"><span class="label">{{activity.status}}</span></div>
-    <div class="col-md-6 text-right"><span class="label label-default right">{{activity.date}}</span></div>
+    <div class="col-md-6 text-right"><span class="label label-default right">{{activity.date | date: "yyyy-MM-dd"}}</span></div>
   </div>
   <div class="count" role="button" (click)="gotoUsers()"><span>参与人数：</span><span class="badge">{{activity.parts}}</span></div>
   <img src="/assets/images/icon-new.png" alt="..." class="icon">
