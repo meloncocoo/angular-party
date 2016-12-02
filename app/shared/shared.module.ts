@@ -1,14 +1,24 @@
-import { NgModule }            from '@angular/core';
-import { CommonModule }        from '@angular/common';
-import { FormsModule }         from '@angular/forms';
+import { NgModule }             from '@angular/core';
+import { CommonModule }         from '@angular/common';
+import { FormsModule }          from '@angular/forms';
 
-import { AwesomePipe }         from './awesome.pipe';
-import { HighlightDirective }  from './highlight.directive';
+import { AlertComponent }       from './alert.component';
+
+import { AwesomePipe }          from './awesome.pipe';
+
+import { HighlightDirective }   from './highlight.directive';
 
 @NgModule({
   imports:      [ CommonModule ],
-  declarations: [ AwesomePipe, HighlightDirective ],
-  exports:      [ AwesomePipe, HighlightDirective,
-                  CommonModule, FormsModule ]
+  declarations: [
+    AlertComponent,
+    AwesomePipe,
+    HighlightDirective
+  ],
+  exports:      [
+    AlertComponent,
+    AwesomePipe,
+    HighlightDirective,
+    CommonModule, FormsModule ]
 })
 export class SharedModule { }

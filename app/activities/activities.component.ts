@@ -1,23 +1,28 @@
 import { Component, OnInit }              from '@angular/core';
 import { Activity, ActivitiesService }    from './activities.service';
+import { Alert }                          from '../shared/alert.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-activities',
-  templateUrl: 'activities.component.html',
+  templateUrl: 'activities.component.html'
 })
 export class ActivitiesComponent implements OnInit {
-  msg = '数据加载中 ...';
-  public activities: Activity[];
+  alert = new Alert('info', '数据加载中 ...');
+  public activities: Activity[] = [];
 
   constructor(private activitiesService: ActivitiesService) { }
 
   ngOnInit() {
-    this.activitiesService.getActivities()
-      .then(activities => {
-        this.msg = '';
-        this.activities = activities;
-        console.log(this.activities);
-      });
+    this.getActivities();
+  }
+
+  getActivities() {
+    this.activitiesService.getActivities().then(activities => {
+      this.activities = activities;
+      this.alert.clear();
+    }, err => {
+      this.alert.set('danger', err, true);
+    });
   }
 }
