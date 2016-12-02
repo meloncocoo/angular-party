@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+
+import { Activity }           from '../activities.service';
 
 @Component({
   moduleId: module.id,
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'activity-add.component.html'
 })
 export class ActivityAddComponent implements OnInit {
+  activity: Activity;
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.activity = new Activity();
+  }
 }
