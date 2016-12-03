@@ -52,3 +52,8 @@ body, input[text], button {
 .activity .thumbnail .actions .fa {
 	font-size: 14px;
 }
+
+.app-live {
+  background-color: red;
+  background: red url('assets/images/s-bg.jpg') repeat repeat 0 0;
+}
