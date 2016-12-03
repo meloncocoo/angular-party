@@ -5,7 +5,7 @@ import { Location }                     from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 import { ActivitiesService, Activity }  from '../activities.service';
-import { Alert }                        from '../../shared/alert.component';
+import { Alert }                        from '../../../shared/alert.component';
 
 @Component({
   moduleId: module.id,

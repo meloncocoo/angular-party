@@ -1,7 +1,7 @@
 import { Component, OnInit }  from '@angular/core';
 import { Location }           from '@angular/common';
 
-import { SpinnerComponent }               from '../../shared/spinner.component';
+import { SpinnerComponent }               from '../../../shared/spinner.component';
 import { Activity, ActivitiesService }    from '../activities.service';
 
 @Component({

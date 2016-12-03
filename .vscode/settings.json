@@ -11,5 +11,7 @@
         // "node_modules": true,
         "**/*.js": { "when": "$(basename).ts" },
         "**/*.js.map": true
-    }
+    },
+
+    "editor.tabSize": 2
 }

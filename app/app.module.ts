@@ -3,28 +3,28 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 /* App Root */
 import { AppComponent }         from './app.component';
+import { LiveComponent }        from './live/live.component';
 
 /* Routing Module */
 import { AppRoutingModule }     from './app-routing.module';
 
 /* Feature Modules */
-import { CoreModule }         from './core/core.module';
 import { ContactModule }      from './contact/contact.module';
 import { HeroModule }         from './hero/hero.module';
-import { ActivitiesModule }   from './activities/activities.module';
+import { AdminModule }        from './admin/admin.module';
 
 import './rxjs-extensions';
 
 @NgModule({
   imports: [
     BrowserModule,
-    CoreModule, // .forRoot({userName: 'Miss Marple'}),
+    // CoreModule, // .forRoot({userName: 'Miss Marple'}),
     HeroModule,
     ContactModule,
-    ActivitiesModule,
+    AdminModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, LiveComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

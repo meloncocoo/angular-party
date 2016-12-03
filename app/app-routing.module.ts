@@ -1,10 +1,13 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LiveComponent }        from './live/live.component';
+
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'activities', pathMatch: 'full' },
   { path: 'heroes',     loadChildren: 'app/hero/hero.module#HeroModule' },
-  { path: 'contact',    loadChildren: 'app/contact/contact.module#ContactModule' }
+  { path: 'contact',    loadChildren: 'app/contact/contact.module#ContactModule' },
+  { path: 'live',       component: LiveComponent }
 ];
 
 @NgModule({
