@@ -3,7 +3,10 @@ import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 
 import { LiveComponent }      from './live.component';
-import { LiveStyleDirective } from './style.directive'; 
+import { LiveStyleDirective } from './style.directive';
+
+import { SocketService }      from '../shared/socket.service';
+
 
 @NgModule({
   imports: [
@@ -12,6 +15,6 @@ import { LiveStyleDirective } from './style.directive';
   ],
   exports: [ ],
   declarations: [ LiveComponent, LiveStyleDirective ],
-  providers: []
+  providers: [ SocketService ]
 })
 export class LiveModule { }

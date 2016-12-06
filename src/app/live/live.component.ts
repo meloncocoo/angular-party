@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SocketService } from '../shared/socket.service';
+
 @Component({
   selector: 'live',
   templateUrl: 'live.component.html'
 })
 export class LiveComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private socketService: SocketService
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.socketService.get('topic/greetings')
+      .subscribe((item: any) => {
+        alert(item);
+      });
+  }
 }
