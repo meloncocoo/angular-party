@@ -17,7 +17,7 @@ export class Activity {
 
 @Injectable()
 export class ActivitiesService {
-  private activityUrl = 'http://localhost:8080/api/activity';
+  private activityUrl = `${API}/activity`;
 
   private headers   = new Headers({
     'Content-Type': 'application/json'
