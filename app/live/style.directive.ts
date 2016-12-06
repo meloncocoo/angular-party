@@ -8,7 +8,7 @@ export class LiveStyleDirective implements OnDestroy {
     renderer.setElementClass(document.body, 'app-live', true);
   }
 
-  ngOnDestroy(el: ElementRef, renderer: Renderer) {
+  ngOnDestroy() {
     this.renderer.setElementClass(document.body, 'app-live', false);
   }
 }
