@@ -10,8 +10,8 @@ import { ActivityUsersComponent }   from './users/activity-users.component';
   imports: [RouterModule.forChild([
     { path: '',                         component: ActivitiesComponent },
     { path: 'activity/add',             component: ActivityAddComponent },
-    { path: 'activity/detail/:id',      component: ActivityDetailComponent },
-    { path: 'activity/users/:id',       component: ActivityUsersComponent }
+    { path: 'activity/:id',             component: ActivityDetailComponent },
+    { path: 'activity/:id/users',       component: ActivityUsersComponent }
   ])],
   exports: [RouterModule]
 })

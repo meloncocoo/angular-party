@@ -14,7 +14,7 @@ import { Alert }                        from '../../../shared/alert.component';
 export class ActivityDetailComponent implements OnInit {
   alert = new Alert('loading', '数据加载中 ...');
 
-  @Input() activity: Activity;
+  activity: Activity;
 
   constructor(
     private activitiesService: ActivitiesService,

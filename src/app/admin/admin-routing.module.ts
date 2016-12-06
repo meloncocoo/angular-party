@@ -10,7 +10,10 @@ import { AdminComponent }       from './admin.component';
       component: AdminComponent, 
       children: [
         { path: '', redirectTo: 'activities', pathMatch: 'full' },
-        { path: 'activities', loadChildren: 'app/admin/activities/activities.module#ActivitiesModule' }
+        {
+          path: 'activities',
+          loadChildren: 'app/admin/activities/activities.module#ActivitiesModule'
+        }
       ]
     }
   ])],

@@ -13,6 +13,13 @@ export class Activity {
   ) { }
 }
 
+export class User {
+  constructor(
+    public id?: number,
+    public name?: string
+  ) { }
+}
+
 // const FETCH_LATENCY = 500;
 
 @Injectable()
@@ -40,6 +47,14 @@ export class ActivitiesService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Activity)
+      .catch(this.handleError);
+  }
+
+  getUsersByActivityId(id: number): Promise<User[]> {
+    const url = `${this.activityUrl}/${id}/users`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as User[])
       .catch(this.handleError);
   }
 

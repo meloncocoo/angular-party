@@ -19,7 +19,7 @@ export class BoxComponent implements OnInit {
   }
 
   gotoUsers(): void {
-    this.router.navigate(['/activity/users', 1]);
+    this.router.navigate(['activities/activity', this.activity.id, 'users']);
   }
 }
 

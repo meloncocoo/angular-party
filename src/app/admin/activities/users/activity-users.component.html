@@ -1,6 +1,14 @@
-<div *ngIf="msg" class="alert alert-success" role="alert">{{msg}}</div>
+<app-alert [alert]="alert"></app-alert>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <span class="navbar-brand">签到人员信息</span>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+    </ul>
+  </div>
+</nav>
 <div class="panel panel-default">
-  <div class="panel-heading">签到人员信息</div>
   <div class="panel-body">
     <table class="table table-bordered">
       <thead>
@@ -14,10 +22,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let item of users; let i=index">
+          <td>{{i + 1}}</td>
           <td></td>
-          <td></td>
-          <td></td>
+          <td>{{item.name}}</td>
           <td></td>
           <td></td>
           <td></td>

@@ -30,7 +30,7 @@ module.exports = {
     // { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/assets/icon/android-icon-192x192.png' },
 
     /** <link> tags for favicons **/
-    { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/assets/icon/favicon.png' },
+    { rel: 'icon', type: 'image/ico', sizes: '64x64', href: '/assets/icon/favicon.ico' },
 
     /** <link> tags for a Web App Manifest **/
     { rel: 'manifest', href: '/assets/manifest.json' }
