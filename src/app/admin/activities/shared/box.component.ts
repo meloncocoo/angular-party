@@ -1,7 +1,7 @@
 import { Component, OnInit, Input }       from '@angular/core';
 import { Router }                         from '@angular/router';
 
-import { Activity }                       from './activities.service';
+import { Activity }                       from '../activities.service';
 
 @Component({
   selector: 'activity-box',

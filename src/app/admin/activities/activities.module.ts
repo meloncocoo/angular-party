@@ -10,7 +10,6 @@ import { ActivitiesComponent }      from './activities.component';
 import { ActivityAddComponent }     from './activity/activity-add.component';
 import { ActivityFormimplements }   from './activity/activity-form.component';
 import { ActivityDetailComponent }  from './activity/activity-detail.component';
-import { BoxComponent }             from './box.component';
 import { ActivityUsersComponent }   from './users/activity-users.component';
 import { ActivitiesService }        from './activities.service';
 
@@ -27,7 +26,6 @@ import { ActivitiesService }        from './activities.service';
     ActivityAddComponent,
     ActivityFormimplements,
     ActivityDetailComponent,
-    BoxComponent,
     ActivityUsersComponent
   ],
   providers:      [ ActivitiesService ]
