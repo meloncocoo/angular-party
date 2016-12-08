@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule }         from '@angular/common';
-import { FormsModule }          from '@angular/forms';
-import { AppRoutingModule }     from './app-routing.module';
+
+import { CoreModule }         from '../../../core/core.module';
+import { SharedModule }       from '../../../shared/shared.module';
 
 import { StatusDirective }    from './status.directive';
 
@@ -9,9 +9,8 @@ import { BoxComponent }       from './box.component';
 import { ScheduleComponent }  from './schedule.component';
 
 @NgModule({
-  imports: [ CommonModule, AppRoutingModule ],
+  imports: [ CoreModule, SharedModule ],
   exports: [
-    CommonModule, FormsModule,
     BoxComponent,
     ScheduleComponent,
     StatusDirective
@@ -22,4 +21,4 @@ import { ScheduleComponent }  from './schedule.component';
     StatusDirective
   ]
 })
-export class ActivityStatusModule { }
+export class ActivitySharedModule { }

@@ -1,1 +1,30 @@
-<h1>schedule</h1>
+<div class="btn-group">
+  <button type="button" class="btn btn-warning">普通节目</button>
+  <button type="button" class="btn btn-warning">摇摇乐</button>
+  <button type="button" class="btn btn-warning">抽大奖</button>
+  <button type="button" class="btn btn-warning">跑步游戏</button>
+  <button type="button" class="btn btn-warning">幸运数字</button>
+</div>
+<table class="table schedule">
+  <thead>
+    <th style="width: 20px;"></th>
+    <th></th>
+    <th style="width: 40px;"></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div radius [content]="1"></div>
+      </td>
+      <td>普通节目</td>
+      <td><a class="btn btn-xs">编辑</a></td>
+    </tr>
+    <tr>
+      <td>
+        <div radius [content]="2" [bg-class]="'bg-danger'"></div>
+      </td>
+      <td>摇摇乐</td>
+      <td><a class="btn btn-xs">编辑</a></td>
+    </tr>
+  </tbody>
+</table>

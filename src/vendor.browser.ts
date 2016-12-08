@@ -27,6 +27,8 @@ import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
+import 'ng2-mask';
+
 if ('production' === ENV) {
   // Production
 

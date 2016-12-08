@@ -1,11 +1,14 @@
 import { Component, Input, OnInit,
   Output, EventEmitter }            from '@angular/core';
 
+import { Ng2MaskModule }            from 'ng2-mask';
+
 import { Activity }                 from '../activities.service';
 
 @Component({
   selector: 'activity-form',
-  templateUrl: 'activity-form.component.html'
+  templateUrl: 'activity-form.component.html',
+  viewProviders: [ Ng2MaskModule ]
 })
 export class ActivityFormimplements implements OnInit {
   @Input() activity: Activity;

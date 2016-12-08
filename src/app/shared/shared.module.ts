@@ -8,6 +8,7 @@ import { SpinnerComponent }     from './spinner.component';
 import { AwesomePipe }          from './awesome.pipe';
 
 import { HighlightDirective }   from './highlight.directive';
+import { RadiusDirective }      from './radius.directive';
 
 @NgModule({
   imports:      [ CommonModule ],
@@ -15,13 +16,15 @@ import { HighlightDirective }   from './highlight.directive';
     AlertComponent,
     SpinnerComponent,
     AwesomePipe,
-    HighlightDirective
+    HighlightDirective,
+    RadiusDirective
   ],
   exports:      [
     AlertComponent,
     SpinnerComponent,
     AwesomePipe,
     HighlightDirective,
+    RadiusDirective,
     CommonModule, FormsModule ]
 })
 export class SharedModule { }

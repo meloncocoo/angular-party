@@ -29,7 +29,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Angular2 iParty by @meloncocoo from @AngularClass',
+  title: 'Angular2 iParty by @meloncocoo',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
