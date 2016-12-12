@@ -13,6 +13,17 @@ export class Activity {
   ) { }
 }
 
+export class Schedule {
+  constructor(
+    public id?: number,
+    public activityId?: number,
+    public name?: string,
+    public desc?: string,
+    public startTime?: string,
+    public endTime?: string
+  ) { }
+}
+
 export class User {
   constructor(
     public id?: number,
@@ -63,7 +74,7 @@ export class ActivitiesService {
     return this.http
       .post(url, JSON.stringify(activity), this.options)
       .toPromise()
-      .then(res => res.json().data)
+      .then(res => res.json())
       .catch(this.handleError);
   }
 
@@ -72,7 +83,7 @@ export class ActivitiesService {
     return this.http
       .put(url, JSON.stringify(activity), this.options)
       .toPromise()
-      .then(res => res.json().data)
+      .then(res => res.json())
       .catch(this.handleError);
   }
 
@@ -81,6 +92,15 @@ export class ActivitiesService {
     return this.http.delete(url, this.options)
       .toPromise()
       .then(() => null)
+      .catch(this.handleError);
+  }
+
+  addScheduleForActivity(id: number, schedule: Schedule): Promise<Schedule> {
+    const url = `${this.activityUrl}/${id}/schedule`;
+     return this.http
+      .post(url, JSON.stringify(schedule), this.options)
+      .toPromise()
+      .then(res => res.json() as Schedule)
       .catch(this.handleError);
   }
 

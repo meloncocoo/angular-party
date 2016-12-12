@@ -28,6 +28,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 import 'ng2-mask';
+import 'ng2-bs3-modal/ng2-bs3-modal';
 
 if ('production' === ENV) {
   // Production
