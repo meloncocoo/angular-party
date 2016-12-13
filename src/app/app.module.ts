@@ -13,6 +13,7 @@ import { AppRoutingModule }     from './app-routing.module';
 // import { HeroModule }         from './hero/hero.module';
 import { AdminModule }        from './admin/admin.module';
 import { LiveModule }         from './live/live.module';
+import { ConsoleModule }      from './console/console.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { LiveModule }         from './live/live.module';
     // ContactModule,
     AdminModule,
     LiveModule,
+    ConsoleModule,
     AppRoutingModule
   ],
   declarations: [ AppComponent/*, LiveComponent*/ ],

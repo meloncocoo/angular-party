@@ -7,7 +7,7 @@ import { UserService } from './user.service';
 })
 export class TitleComponent {
   @Input() subtitle = '';
-  title = '新场景';
+  title = 'eJoy';
   user = '';
 
   constructor(userService: UserService) {
