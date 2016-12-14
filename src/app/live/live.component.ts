@@ -12,9 +12,9 @@ export class LiveComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.socketService.get('topic/greetings')
-      .subscribe((item: any) => {
-        alert(item);
-      });
+    // this.socketService.get('/topic/greetings')
+    //   .subscribe((item: any) => {
+    //     alert(item);
+    //   });
   }
 }
