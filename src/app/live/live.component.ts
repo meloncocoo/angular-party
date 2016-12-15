@@ -7,14 +7,31 @@ import { SocketService } from '../shared/socket.service';
   templateUrl: 'live.component.html'
 })
 export class LiveComponent implements OnInit {
+  // event: EventEmitter<any> = new EventEmitter();
+  content: string;
+
   constructor(
     private socketService: SocketService
-  ) { }
+  ) {
+    this.socketService.event.subscribe((result) => {
+      switch (result.action) {
+        case 'connected':
+          this.onConnected();
+          break;
+        default:
+          break;
+      }
+    });
+  }
 
   ngOnInit() {
-    // this.socketService.get('/topic/greetings')
-    //   .subscribe((item: any) => {
-    //     alert(item);
-    //   });
+  }
+
+  onConnected() {
+    this.socketService.get('/live/control')
+      .subscribe(res => {
+        this.content = res;
+        console.log(res);
+      });
   }
 }
