@@ -7,4 +7,8 @@ import 'rxjs/add/operator/toPromise';
 export class ConsoleService {
 
   constructor() { }
+
+  getActivity(id: number) {
+    
+  }
 }
