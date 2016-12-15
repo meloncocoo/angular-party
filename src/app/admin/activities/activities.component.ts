@@ -24,4 +24,10 @@ export class ActivitiesComponent implements OnInit {
       this.alert.set('danger', err, true);
     });
   }
+
+  refresh() {
+    this.activities = null;
+    this.alert.set('info', '数据加载中 ...');
+    this.getActivities();
+  }
 }

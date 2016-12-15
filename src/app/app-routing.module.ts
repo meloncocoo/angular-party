@@ -1,11 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ConsoleComponent }     from './console/console.component';
-
 const routes: Routes = [
-  { path: '', redirectTo: 'activities', pathMatch: 'full' },
-  { path: 'console',    component: ConsoleComponent }
+  { path: '', redirectTo: 'activities', pathMatch: 'full' }
 ];
 
 @NgModule({

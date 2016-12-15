@@ -49,6 +49,11 @@ body, input[text], button {
 .activity .thumbnail .actions {
   padding: 10px 25px;
 }
+.activity .thumbnail .actions span {
+  display: table-cell;
+  width: 1%;
+  text-align: center;
+}
 .activity .thumbnail .actions .fa {
 	font-size: 14px;
 }

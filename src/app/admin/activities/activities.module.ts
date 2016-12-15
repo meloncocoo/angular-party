@@ -14,7 +14,6 @@ import { ActivityFormimplements }   from './activity/activity-form.component';
 import { ActivityDetailComponent }  from './activity/activity-detail.component';
 import { ActivityUsersComponent }   from './users/activity-users.component';
 import { ActivitiesService }        from './activities.service';
-import { ScheduleService }          from './schedule.service';
 
 @NgModule({
   imports:        [
