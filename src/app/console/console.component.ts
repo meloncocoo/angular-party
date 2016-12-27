@@ -13,7 +13,7 @@ export class ConsoleComponent implements OnInit {
   activity: Activity;
 
   constructor(
-    consoleService: ConsoleService,
+    private consoleService: ConsoleService,
     private route: ActivatedRoute
   ) { }
 
@@ -23,6 +23,8 @@ export class ConsoleComponent implements OnInit {
       .subscribe(activity => {
         this.alert.clear();
         this.activity = activity;
+      }, err => {
+        this.alert.set('danger', err, true);
       });
   }
 }

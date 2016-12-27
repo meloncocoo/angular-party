@@ -73,3 +73,14 @@ body, input[text], button {
 .table.schedule > tbody > tr > td {
   line-height: 28px;
 }
+
+/**
+ CONSOLE
+*/
+.console > .nav > li {
+  display: table-cell !important;
+  width: 1%;
+}
+.console > .nav > li > a {
+  margin: 0px;
+}
