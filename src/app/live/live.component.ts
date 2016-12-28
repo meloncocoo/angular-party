@@ -31,7 +31,7 @@ export class LiveComponent implements OnInit {
     this.socketService.get('/live/control')
       .subscribe(res => {
         this.content = res;
-        console.log(res);
+        console.log(this.content);
       });
   }
 }

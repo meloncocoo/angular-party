@@ -1,14 +1,20 @@
-import { Directive, ElementRef, Renderer, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Renderer, Input, OnInit, OnDestroy } from '@angular/core';
 
-@Directive({
-  selector: '[liveStyle]'
-})
-export class LiveStyleDirective implements OnDestroy {
-  constructor(private el: ElementRef, private renderer: Renderer) {
-    renderer.setElementClass(document.body, 'app-live', true);
+@Directive({ selector: '[style]' })
+export class LiveStyleDirective implements OnInit, OnDestroy {
+  @Input('body-class') bodyClass: string[];
+
+  constructor(private renderer: Renderer, private el: ElementRef) { }
+
+  ngOnInit() {
+    this.bodyClass.forEach(item => {
+      this.renderer.setElementClass(document.body, item, true);
+    });
   }
 
   ngOnDestroy() {
-    this.renderer.setElementClass(document.body, 'app-live', false);
+    this.bodyClass.forEach(item => {
+      this.renderer.setElementClass(document.body, item, false);
+    });
   }
 }

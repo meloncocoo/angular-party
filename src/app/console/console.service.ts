@@ -23,6 +23,12 @@ export class Schedule {
 export class ConsoleService {
   private url = `${API}`;
 
+  private headers   = new Headers({
+    'Content-Type': 'application/json'
+  });
+
+  private options = new ResponseOptions({ headers: this.headers });
+
   constructor(private http: Http) { }
 
   getActivity(id: number): Promise<Activity> {
@@ -38,6 +44,18 @@ export class ConsoleService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Schedule[])
+      .catch(this.handleError);
+  }
+
+  sendAction(name: string, activityId: number): Promise<any> {
+    const url = `${this.url}/console/action`;
+    let action = {
+      name: name,
+      activityId: activityId
+    };
+    return this.http.post(url, JSON.stringify(action), this.options)
+      .toPromise()
+      // .then(res => res.json())
       .catch(this.handleError);
   }
 

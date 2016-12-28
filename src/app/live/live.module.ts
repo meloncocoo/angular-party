@@ -5,8 +5,9 @@ import { FormsModule }        from '@angular/forms';
 import { LiveRoutingModule }  from './live-routing.module';
 
 import { LiveComponent }      from './live.component';
-import { LiveStyleDirective } from './style.directive';
+import { CheckInComponent }   from './check-in.component';
 
+import { LiveStyleDirective } from './style.directive';
 import { SocketService }      from '../shared/socket.service';
 
 
@@ -19,6 +20,7 @@ import { SocketService }      from '../shared/socket.service';
   exports: [ ],
   declarations: [
     LiveComponent,
+    CheckInComponent,
     LiveStyleDirective
   ],
   providers: [ SocketService ]

@@ -1,8 +1,9 @@
+<app-alert [alert]="alert"></app-alert>
 <div class="list-group text-center">
-  <a href="javascript:;" class="list-group-item active">签到界面</a>
-  <a href="javascript:;" class="list-group-item">投标界面</a>
-  <a href="javascript:;" class="list-group-item">留言墙</a>
-  <a href="javascript:;" class="list-group-item">弹幕</a>
-  <a href="javascript:;" class="list-group-item">投票排名</a>
-  <a href="javascript:;" class="list-group-item">评分结果</a>
+  <a [class.active]="action === 'checkin'" (click)="onClick('checkin')" class="list-group-item">签到界面</a>
+  <a [class.active]="action === 'vote'" (click)="onClick('vote')" class="list-group-item">投票界面</a>
+  <a [class.active]="action === 'comment'" (click)="onClick('comment')" class="list-group-item">留言墙</a>
+  <a [class.active]="action === 'chat'" (click)="onClick('chat')" class="list-group-item">弹幕</a>
+  <a [class.active]="action === 'vote-result'" (click)="onClick('vote-result')" class="list-group-item">投票排名</a>
+  <a [class.active]="action === 'score-result'" (click)="onClick('score-result')" class="list-group-item">评分结果</a>
 </div>

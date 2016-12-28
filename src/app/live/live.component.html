@@ -1,1 +1,3 @@
-<div liveStyle>{{content}}</div>
+<div style [body-class]="['app-live']">
+  <span *ngIf="content">{{content.name}} - {{content.activityId}}</span>
+</div>
