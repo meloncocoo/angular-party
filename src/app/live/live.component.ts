@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SocketService } from '../shared/socket.service';
 
@@ -8,10 +9,11 @@ import { SocketService } from '../shared/socket.service';
 })
 export class LiveComponent implements OnInit {
   // event: EventEmitter<any> = new EventEmitter();
-  content: string;
+  content: { name: null };
 
   constructor(
-    private socketService: SocketService
+    private socketService: SocketService,
+    private router: Router
   ) {
     this.socketService.event.subscribe((result) => {
       switch (result.action) {
@@ -32,6 +34,19 @@ export class LiveComponent implements OnInit {
       .subscribe(res => {
         this.content = res;
         console.log(this.content);
+        this.update();
       });
+  }
+
+  update(): any {
+    let name = this.content.name;
+
+    switch(name) {
+      case 'vote':
+      case 'checkin':
+        this.router.navigate(['live/check-in']); break;
+      default:
+        this.router.navigate(['live']);
+    }
   }
 }

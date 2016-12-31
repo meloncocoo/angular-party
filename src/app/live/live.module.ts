@@ -1,6 +1,5 @@
 import { NgModule }           from '@angular/core';
-import { CommonModule }       from '@angular/common';
-import { FormsModule }        from '@angular/forms';
+import { CoreModule }         from '../core/core.module';
 
 import { LiveRoutingModule }  from './live-routing.module';
 
@@ -9,12 +8,12 @@ import { CheckInComponent }   from './check-in.component';
 
 import { LiveStyleDirective } from './style.directive';
 import { SocketService }      from '../shared/socket.service';
+import { LiveService }        from './live.service';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
+    CoreModule,
     LiveRoutingModule
   ],
   exports: [ ],
@@ -23,6 +22,6 @@ import { SocketService }      from '../shared/socket.service';
     CheckInComponent,
     LiveStyleDirective
   ],
-  providers: [ SocketService ]
+  providers: [ SocketService, LiveService ]
 })
 export class LiveModule { }

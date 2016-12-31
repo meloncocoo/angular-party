@@ -63,6 +63,15 @@ body, input[text], button {
   background: red url('../images/s-bg.jpg') repeat repeat 0 0;
 }
 
+.live-check-in {
+  background-color: red;
+  background: red url('../images/check-in.png') no-repeat no-repeat center 0;
+}
+
+.live-check-in img.qr-code {
+  width: 200px;
+}
+
 .radius-num {
   width: 30px; height: 30px; background-color: #5cb85c; border-radius: 15px;
 }

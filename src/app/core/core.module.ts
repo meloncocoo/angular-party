@@ -22,8 +22,7 @@ import { UserService }          from './user.service';
     CommonModule,
     RouterModule,
     FormsModule,
-    HttpModule/*,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)*/
+    HttpModule
   ],
   declarations: [ TitleComponent ],
   exports:      [

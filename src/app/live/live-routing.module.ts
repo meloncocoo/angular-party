@@ -11,8 +11,11 @@ const routes: Routes = [
 @NgModule({
   imports: [ RouterModule.forChild([
     { path: '', redirectTo: 'live', pathMatch: 'full' },
-    { path: 'live', component: LiveComponent },
-    { path: 'check-in', component: CheckInComponent }
+    { path: 'live', component: LiveComponent,
+      children: [
+        { path: 'check-in', component: CheckInComponent }
+      ]
+    }
   ])],
   exports: [ RouterModule ],
 })
