@@ -1,17 +1,8 @@
 /* Master Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
 body {
   margin: 2em;
   background-color: #e1e1e8;
+  font-family: '微软雅黑', Arial, Helvetica, sans-serif !important;
 }
 body, input[text], button {
   color: #888;
@@ -66,10 +57,79 @@ body, input[text], button {
 .live-check-in {
   background-color: red;
   background: red url('../images/check-in.png') no-repeat no-repeat center 0;
+  width: 1024px;
+  margin: 0 auto;
 }
 
-.live-check-in img.qr-code {
+.live-check-in .qr-code {
+  padding: 15px 0;
+}
+
+.live-check-in .qr-code img {
   width: 200px;
+}
+
+.live-check-in .title h1 {
+  color: white;
+}
+
+.live-check-in .qr-code h2 {
+  font-family: '微软雅黑', Times, serif;
+  color: white;
+}
+
+.live-check-in .company-logo {
+  text-align: center;
+}
+
+.live-check-in .company-logo img {
+  width: 64px;
+}
+
+.live-check-in .counter {
+  color: white;
+  padding: 30px 0;
+}
+
+.live-check-in .counter span {
+  font-size: 48px;
+}
+
+.live-check-in .users {
+  padding: 15px;
+}
+
+.live-check-in .users ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.live-check-in .users ul li {
+  display: inline-block;
+  background-color: white;
+  padding: 10px;
+  opacity: .8;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  width: 145px;
+}
+
+.live-check-in .users ul li img {
+  width: 48px;
+  opacity: 1;
+  float: left;
+}
+
+.live-check-in .users ul li .name {
+  color: #933;
+  font-weight: bold;
+  opacity: 1;
+  overflow: hidden;
+  display: block;
+  width: 70px;
+  float: left;
+  margin-top: 4px;
 }
 
 .radius-num {
