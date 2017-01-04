@@ -1,0 +1,27 @@
+.ui.segment {
+  position: relative;
+}
+.ui.spinner {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;  
+  text-align: center;
+  background-color: white;
+  opacity: .6;
+  z-index: 5000;
+  vertical-align: middle;
+  will-change: opacity;
+}
+.ui.page.spinner {
+  position: fixed;
+}
+.ui.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+  z-index: 5100;
+}

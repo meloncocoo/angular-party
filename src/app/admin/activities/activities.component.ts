@@ -27,7 +27,7 @@ export class ActivitiesComponent implements OnInit {
 
   refresh() {
     this.activities = null;
-    this.alert.set('info', '数据加载中 ...');
+    this.alert.set('loading', '数据加载中 ...');
     this.getActivities();
   }
 }

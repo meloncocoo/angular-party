@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http, Response, ResponseOptions }  from '@angular/http';
 
 export class User {
   constructor(
     public id: number,
-    public name: string
+    public name: string,
+    public headImgUrl?: string
   ) { }
 }
 
@@ -16,10 +18,14 @@ const FETCH_LATENCY = 500;
 
 @Injectable()
 export class ActivityUserService {
-  getUsers() {
-    return new Promise<User[]>(resolve => {
-      setTimeout(() => { resolve(USERS); }, FETCH_LATENCY);
-    });
+  private activityUrl = `${API}/activity`;
+
+  getUsers(activityId: number) {
+    const url = `${this.activityUrl}/${activityId}/users`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as User[])
+      .catch(this.handleError);
   }
 
   getUser(id: number): Promise<User> {

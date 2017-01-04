@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import '../assets/css/melon-ui.css';
 import '../assets/css/styles.css';
 
 @Component({
