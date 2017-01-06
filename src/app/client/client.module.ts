@@ -7,10 +7,12 @@ import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent }   from './client.component';
 import { WelcomeComponent }   from './welcome.component';
 
+import { ClientService } from './client.service';
+
 @NgModule({
   imports: [ CoreModule, SharedModule, ClientRoutingModule ],
   exports: [],
   declarations: [ClientComponent, WelcomeComponent],
-  providers: [],
+  providers: [ ClientService ],
 })
 export class ClientModule { }

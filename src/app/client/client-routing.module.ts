@@ -5,8 +5,8 @@ import { ClientComponent } from './client.component';
 import { WelcomeComponent } from './welcome.component';
 
 const routes: Routes = [
-  { path: 'client', redirectTo: 'client/welcome', pathMatch: 'full' },
-  { path: 'client', component: ClientComponent,
+  { path: 'client/:id', redirectTo: 'client/:id/welcome', pathMatch: 'full' },
+  { path: 'client/:id', component: ClientComponent,
     children: [
       { path: 'welcome', component: WelcomeComponent }
     ]

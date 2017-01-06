@@ -112,6 +112,7 @@ body, input[text], button {
   opacity: .8;
   border-radius: 6px;
   margin-bottom: 5px;
+  margin-right: 5px;
   width: 145px;
 }
 
@@ -169,11 +170,14 @@ body, input[text], button {
 .app-client .welcome H2 {
   color: white;
   font-family: '微软雅黑', Arial, Helvetica, sans-serif;
-  line-height: 120px;
 }
 
 .app-client .welcome img.cover {
-  width: 280px;
+  width: 250px;
   border-radius: 50%;
   border: #FFF solid 2px;
+}
+
+.app-client .welcome img.logo {
+  margin-top: 20px;
 }

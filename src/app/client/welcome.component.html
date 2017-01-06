@@ -1,5 +1,5 @@
-<div class="welcome">
+<div *ngIf="activity" class="welcome">
   <img class="cover" src="/assets/images/profile.png" />
-  <h2>2017年年会</h2>
+  <h2>{{activity.name}}</h2>
   <img class="logo" src="/assets/images/logo.png" />
 </div>
