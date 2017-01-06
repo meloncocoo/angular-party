@@ -8,8 +8,8 @@
         <img *ngIf="qrCode" [attr.src]="qrCode.url" />
         <h2>微信扫码签到</h2>
       </div>
-      <div class="counter">
-        <span *ngIf="activity">{{activity.parts}}</span> 人
+      <div class="counter" *ngIf="activity">
+        <span>{{activity.parts}}</span> 人
       </div>
       <div class="company-logo">
         <img src="/assets/images/logo.png" />
