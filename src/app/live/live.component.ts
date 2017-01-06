@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, Params, NavigationExtras } from '@angular/router';
 
 import { SocketService } from '../shared/socket.service';
 
@@ -8,11 +8,11 @@ import { SocketService } from '../shared/socket.service';
   templateUrl: 'live.component.html'
 })
 export class LiveComponent implements OnInit {
-  // event: EventEmitter<any> = new EventEmitter();
-  content: { name: null };
+  activityId: number;
 
   constructor(
     private socketService: SocketService,
+    private route: ActivatedRoute,
     private router: Router
   ) {
     this.socketService.event.subscribe((result) => {
@@ -27,24 +27,28 @@ export class LiveComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.activityId = +this.route.snapshot.params['id'];
   }
 
   onConnected() {
     this.socketService.get('/live/control')
       .subscribe(res => {
-        this.content = res;
-        console.log(this.content);
-        this.update();
+        this.update(res);
       });
   }
 
-  update(): any {
-    let name = this.content.name;
+  update(res: any): any {
+    let name = res.name;
+    let id: number = res.activityId;
+
+    let navigationExtras: NavigationExtras = {
+      queryParams: { 'id': id }
+    };
 
     switch(name) {
       case 'vote':
       case 'checkin':
-        this.router.navigate(['live/check-in']); break;
+        this.router.navigate(['live/check-in'], navigationExtras); break;
       default:
         this.router.navigate(['live']);
     }

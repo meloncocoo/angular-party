@@ -61,6 +61,7 @@ declare var ENV: string;
 declare var HOST: string;
 declare var PORT: string;
 declare var API: string;
+declare var WSSOCKET: string;
 declare var HMR: boolean;
 declare var System: SystemJS;
 
@@ -73,6 +74,7 @@ interface GlobalEnvironment {
   HOST: string;
   PORT: string;
   API: string;
+  WSSOCKET: string;
   HMR: boolean;
   SystemJS: SystemJS;
   System: SystemJS;

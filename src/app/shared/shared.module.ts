@@ -11,6 +11,7 @@ import { AwesomePipe }          from './awesome.pipe';
 
 import { HighlightDirective }   from './highlight.directive';
 import { RadiusDirective }      from './radius.directive';
+import { BodyStyleDirective }   from './style.directive';
 
 @NgModule({
   imports:      [ CommonModule, MelonUIModule ],
@@ -19,7 +20,8 @@ import { RadiusDirective }      from './radius.directive';
     SpinnerComponent,
     AwesomePipe,
     HighlightDirective,
-    RadiusDirective
+    RadiusDirective,
+    BodyStyleDirective
   ],
   exports:      [
     AlertComponent,
@@ -27,6 +29,7 @@ import { RadiusDirective }      from './radius.directive';
     AwesomePipe,
     HighlightDirective,
     RadiusDirective,
+    BodyStyleDirective,
     CommonModule, FormsModule, MelonUIModule ]
 })
 export class SharedModule { }

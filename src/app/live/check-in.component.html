@@ -1,49 +1,25 @@
-<div style [body-class]="['live-check-in']">
+<div bodyStyle [body-class]="['live-check-in']">
   <div class="row">
     <div class="col-md-3 text-center">
       <div class="title">
-        <h1>2017年年会</h1>
+        <h1 *ngIf="activity">{{activity.name}}</h1>
       </div>
       <div class="qr-code">
         <img *ngIf="qrCode" [attr.src]="qrCode.url" />
         <h2>微信扫码签到</h2>
       </div>
       <div class="counter">
-        <span>10</span> 人
+        <span *ngIf="activity">{{activity.parts}}</span> 人
       </div>
       <div class="company-logo">
         <img src="/assets/images/logo.png" />
       </div>
     </div>
     <div class="col-md-9 users">
-      <ul class="row">
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO</span>
-        </li>
-        <li>
-          <img src="/assets/images/profile.png" />
-          <span class="name">冬瓜oO11111</span>
+      <ul class="row" *ngIf="users">
+        <li *ngFor="let item of users">
+          <img [attr.src]="item.headImgUrl" />
+          <span class="name">{{item.name}}</span>
         </li>
       </ul>
     </div>

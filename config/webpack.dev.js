@@ -102,6 +102,7 @@ module.exports = function (options) {
         'HMR': METADATA.HMR,
         'HOST': JSON.stringify(HOST),
         'PORT': JSON.stringify(PORT),
+        'WSSOCKET': JSON.stringify('http://' + HOST + ':' + REMOTE_PORT ),
         'API': JSON.stringify('http://' + HOST + ':' + REMOTE_PORT + '/api'),
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),

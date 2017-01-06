@@ -5,7 +5,8 @@ export class User {
   constructor(
     public id: number,
     public name: string,
-    public headImgUrl?: string
+    public headImgUrl?: string,
+    public checkInDate?: string
   ) { }
 }
 

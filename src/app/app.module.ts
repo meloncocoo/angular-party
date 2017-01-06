@@ -14,6 +14,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AdminModule }        from './admin/admin.module';
 import { LiveModule }         from './live/live.module';
 import { ConsoleModule }      from './console/console.module';
+import { ClientModule }       from './client/client.module';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ConsoleModule }      from './console/console.module';
     AdminModule,
     LiveModule,
     ConsoleModule,
+    ClientModule,
     AppRoutingModule
   ],
   declarations: [ AppComponent/*, LiveComponent*/ ],

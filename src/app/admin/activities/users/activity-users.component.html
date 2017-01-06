@@ -24,9 +24,9 @@
       <tbody>
         <tr *ngFor="let item of users; let i=index">
           <td>{{i + 1}}</td>
-          <td><img *ngIf="item.headImgUrl" [attr.src]="item.headImgUrl" /></td>
+          <td><img *ngIf="item.headImgUrl" [attr.src]="item.headImgUrl" style="width: 32px;" /></td>
           <td>{{item.name}}</td>
-          <td></td>
+          <td>{{item.checkInDate}}</td>
           <td></td>
           <td></td>
         </tr>

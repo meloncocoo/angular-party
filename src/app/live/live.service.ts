@@ -1,10 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response, ResponseOptions }  from '@angular/http';
 
+export class Activity {
+  constructor(
+    public id?: number,
+    public name?: string,
+    public parts?: number
+  ) { }
+}
+
 export class QrCode {
   constructor(
     public activityId?: number,
     public url?: string
+  ) { }
+}
+
+export class User {
+  constructor(
+    public name?: string,
+    public headImgUrl?: string
   ) { }
 }
 
@@ -25,6 +40,23 @@ export class LiveService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as QrCode)
+      .catch(this.handleError);
+  }
+
+  getActivity(id: number): Promise<Activity> {
+    const url = `${this.url}/activity?activityId=${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as Activity)
+      .catch(this.handleError);
+    
+  }
+
+  getUsers(id: number): Promise<User[]> {
+    const url = `${this.url}/users?activityId=${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as User[])
       .catch(this.handleError);
   }
 
