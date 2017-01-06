@@ -12,7 +12,7 @@ export class SocketService {
   @Output() event: EventEmitter<any> = new EventEmitter();
 
   private name: string;
-  private host: string = 'http://localhost:8080';
+  private host: string = 'http://222.92.5.186';
   private socket: any;
   private client: any;
   private connected: boolean = false;
