@@ -6,7 +6,7 @@ import { CheckInComponent } from './check-in.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'live', pathMatch: 'full' },
-    { path: 'live', component: LiveComponent,
+    { path: 'live/:id', component: LiveComponent,
       children: [
         { path: 'check-in', component: CheckInComponent }
       ]
