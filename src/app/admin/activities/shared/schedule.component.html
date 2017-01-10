@@ -1,7 +1,7 @@
 <div class="btn-group">
   <button type="button" class="btn btn-warning" (click)="addNormalSchedule()">普通节目</button>
   <button type="button" class="btn btn-warning" (click)="modal.open()">摇摇乐</button>
-  <button type="button" class="btn btn-warning" (click)="modal.open()">抽大奖</button>
+  <button type="button" class="btn btn-warning" (click)="addLotterySchedule()">抽大奖</button>
   <button type="button" class="btn btn-warning" (click)="modal.open()">跑步游戏</button>
   <button type="button" class="btn btn-warning" (click)="modal.open()">幸运数字</button>
 </div>
@@ -25,7 +25,7 @@
   </tbody>
 </table>
  
-<modal #normalSchedule>
+<modal #scheduleModal>
   <form *ngIf="schedule" (ngSubmit)="onSubmit()" #activityForm="ngForm" class="form-horizontal" role="form">
     <modal-header [show-close]="true">
       <h4 class="modal-title">普通节目</h4>
@@ -50,9 +50,15 @@
           <input type="text" [(ngModel)]="schedule.startTime " mask='00:00 - 00:00' name="date" class="form-control" id="date" placeholder="时间">
         </div>
       </div>
+      <div *ngIf="schedule.type === 'LOTTERY'" class="form-group">
+        <label for="date" class="col-sm-2 control-label">奖品个数</label>
+        <div class="col-sm-10">
+          <input type="text" [(ngModel)]="schedule.count" name="date" class="form-control" id="date" placeholder="奖品个数">
+        </div>
+      </div>
     </modal-body>
     <modal-footer>
-      <button type="button" class="btn btn-default" data-dismiss="normalSchedule" (click)="normalSchedule.dismiss()">取消</button>
+      <button type="button" class="btn btn-default" data-dismiss="scheduleModal" (click)="scheduleModal.dismiss()">取消</button>
       <button type="submit" class="btn btn-primary" [disabled]="!activityForm.form.valid">保存</button>
     </modal-footer>
   </form>

@@ -6,6 +6,7 @@ import { LiveRoutingModule }  from './live-routing.module';
 
 import { LiveComponent }      from './live.component';
 import { CheckInComponent }   from './check-in.component';
+import { LotteryComponent }   from './lottery.component';
 
 import { SocketService }      from '../shared/socket.service';
 import { LiveService }        from './live.service';
@@ -20,7 +21,8 @@ import { LiveService }        from './live.service';
   exports: [ ],
   declarations: [
     LiveComponent,
-    CheckInComponent
+    CheckInComponent,
+    LotteryComponent
   ],
   providers: [ SocketService, LiveService ]
 })

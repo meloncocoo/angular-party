@@ -11,7 +11,8 @@ export class Schedule {
     public name?: string,
     public desc?: string,
     public startTime?: string,
-    public endTime?: string
+    public endTime?: string,
+    public count?: number
   ) { }
 }
 

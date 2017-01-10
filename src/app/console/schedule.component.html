@@ -1,3 +1,9 @@
-<ul *ngIf="schedules" class="list-group">
-  <li class="list-group-item" *ngFor="let item of schedules">{{item.name}}</li>
+<ul *ngIf="schedules" class="console list-group">
+  <li class="list-group-item" *ngFor="let item of schedules">
+    {{item.name}}
+    <button *ngIf="item.status === 'READY'" class="btn btn-xs btn-success" (click)="onStart(item)">显示</button>
+    <button *ngIf="item.status === 'RUNNING'" class="btn btn-xs btn-danger" (click)="onEnd(item)">结束</button>
+    <button *ngIf="item.status === 'RUNNING'" class="btn btn-xs btn-warning" (click)="onDraw(item)">抽奖</button>
+    <button *ngIf="item.status === 'DRAWING'" class="btn btn-xs btn-danger" (click)="onStop(item)">停止</button>
+  </li>
 </ul>

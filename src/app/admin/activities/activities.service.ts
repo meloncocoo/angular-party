@@ -16,11 +16,13 @@ export class Activity {
 export class Schedule {
   constructor(
     public id?: number,
+    public type?: string,
     public activityId?: number,
     public name?: string,
     public desc?: string,
     public startTime?: string,
-    public endTime?: string
+    public endTime?: string,
+    public count?: number
   ) { }
 }
 

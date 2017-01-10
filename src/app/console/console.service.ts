@@ -15,7 +15,8 @@ export class Schedule {
     public name?: string,
     public desc?: string,
     public startTime?: string,
-    public endTime?: string
+    public endTime?: string,
+    public status?: string
   ) { }
 }
 
@@ -54,6 +55,14 @@ export class ConsoleService {
       activityId: activityId
     };
     return this.http.post(url, JSON.stringify(action), this.options)
+      .toPromise()
+      // .then(res => res.json())
+      .catch(this.handleError);
+  }
+
+  controlSchedule(control: any): Promise<any> {
+    const url = `${this.url}/console/schedule`;
+    return this.http.post(url, JSON.stringify(control), this.options)
       .toPromise()
       // .then(res => res.json())
       .catch(this.handleError);

@@ -40,17 +40,21 @@ export class LiveComponent implements OnInit {
   update(res: any): any {
     let name = res.name;
     let id: number = res.activityId;
+    let urlTree: any;
 
-    let navigationExtras: NavigationExtras = {
-      queryParams: { 'id': id }
-    };
-
-    switch(name) {
+    switch (name) {
       case 'vote':
       case 'checkin':
-        this.router.navigate(['live/check-in'], navigationExtras); break;
+        urlTree = this.router.createUrlTree(['./check-in'], {relativeTo: this.route});
+        this.router.navigateByUrl(urlTree);
+        break;
+      case 'lottery':
+        urlTree = this.router.createUrlTree(['./lottery'], {relativeTo: this.route});
+        this.router.navigateByUrl(urlTree);
+        break;
       default:
-        this.router.navigate(['live']);
+        urlTree = this.router.createUrlTree(['./'], {relativeTo: this.route});
+        this.router.navigateByUrl(urlTree);
     }
   }
 }

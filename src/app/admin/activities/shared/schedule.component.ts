@@ -14,8 +14,8 @@ export class ScheduleComponent implements OnInit {
 
   @Input() activity: Activity;
 
-  @ViewChild('normalSchedule')
-  normalSchedule: ModalComponent;
+  @ViewChild('scheduleModal')
+  scheduleModal: ModalComponent;
 
   private schedule: Schedule;
   private schedules: Schedule[];
@@ -45,7 +45,7 @@ export class ScheduleComponent implements OnInit {
           this.schedules.push(schedule);
         }
         this.schedule = null;
-        this.normalSchedule.close();
+        this.scheduleModal.close();
         this.alert.clear();
       }, (err) => {
         this.alert.set('danger', err, true);
@@ -65,6 +65,13 @@ export class ScheduleComponent implements OnInit {
   addNormalSchedule() {
     this.schedule = new Schedule();
     this.alert.clear();
-    this.normalSchedule.open();
+    this.scheduleModal.open();
+  }
+
+  addLotterySchedule() {
+    this.schedule = new Schedule();
+    this.schedule.type = 'LOTTERY';
+    this.alert.clear();
+    this.scheduleModal.open();
   }
 }

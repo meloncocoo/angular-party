@@ -30,7 +30,7 @@ export class CheckInComponent implements OnInit {
   }
 
   ngOnInit() {
-    let activityId = +this.route.snapshot.queryParams['id'];
+    let activityId = +this.route.parent.snapshot.params['id'];
     this.liveService.getActivity(activityId).then(activity => {
       this.activity = activity;
     }, err => {

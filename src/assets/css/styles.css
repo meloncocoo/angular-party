@@ -133,6 +133,28 @@ body, input[text], button {
   margin-top: 4px;
 }
 
+/**
+ Lottery
+*/
+
+.live-lottery {
+  background-color: red;
+  background: red url('../images/lottery.png') no-repeat no-repeat center 0;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.live-lottery .title {
+  margin-top: 60px;
+}
+
+.live-lottery .title H1 {
+  color: white;
+  font-family: '微软雅黑', Times, serif;
+  font-weight: bold;
+}
+
+
 .radius-num {
   width: 30px; height: 30px; background-color: #5cb85c; border-radius: 15px;
 }
@@ -153,6 +175,9 @@ body, input[text], button {
 }
 .console > .nav > li > a {
   margin: 0px;
+}
+.console.list-group .list-group-item {
+  line-height: 24px;
 }
 
 /**
